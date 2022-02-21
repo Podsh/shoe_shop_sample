@@ -58,7 +58,6 @@ class AddShoeFragment : Fragment() {
             editTextName.addTextChangedListener(textWatcher)
             editTextCompany.addTextChangedListener(textWatcher)
             editTextDescription.addTextChangedListener(textWatcher)
-            editTextSize.addTextChangedListener(textWatcher)
 
             // show/hide errors when input have been validate
             fragmentViewModel.nameIsCorrect.observe(viewLifecycleOwner) {
@@ -97,7 +96,7 @@ class AddShoeFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         activityViewModel = activityViewModels<MainViewModel>().value
         binding.viewModel = fragmentViewModel
-        binding.shoe = Shoe("",0.0,"","")
+        binding.shoe = Shoe("","","")
         binding.buttonCancel.setOnClickListener {
             navController.navigateUp()
         }
